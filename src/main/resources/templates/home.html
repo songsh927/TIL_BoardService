@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div class="container">
+    <div>
+        <h1>Contents Board</h1>
+        <table border=1>
+            <div>
+
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>작성자</th>
+                    <th>제목</th>
+                    <th>작성일</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="content : ${contents}">
+                    <a th:href="@{/contents/view(id=${content.id})}" th:text="${content.id}"></a>
+                    <a th:href="@{/contents/view(id=${content.id})}" th:text="${content.writer}"></a>
+                    <a th:href="@{/contents/view(id=${content.id})}" th:text="${content.title}"></a>
+                    <a th:href="@{/contents/view(id=${content.id})}" th:text="${content.date}"></a>
+                </tr>
+                </tbody>
+
+            </div>
+        </table>
+
+        <p>
+            <a href="/contents/new-form">글 작성</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

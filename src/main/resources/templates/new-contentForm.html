@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div class = "container">
+    <form action="/contents/create" method="post">
+        <div class="form-writer">
+            <input type="text" id="writer" name="writer" row="1" cols="55" placeholder="이름을 입력하세요">
+        </div>
+
+        <div class="form=title">
+            <textarea name="title" id="title" style="resize:none;" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
+        </div>
+
+        <div class="form-text">
+            <textarea name="text" id="text" style="resize:none;" rows="55" cols="55" placeholder="내용" maxlength="100" required></textarea>
+        </div>
+        <button type="submit">등록</button>
+    </form>
+</div>
+
+
+</body>
+</html>
