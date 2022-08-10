@@ -10,10 +10,8 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-//    @GetMapping("/")
-//    public String home(Model model){
-//        List<Content> contents = contentService.findAllContents();
-//        model.addAttribute("contents", contents);
-//        return "home";
-//    }
+    @GetMapping
+    public String home(){
+        return "redirect:/contents";
+    }
 }

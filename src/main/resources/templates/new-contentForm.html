@@ -1,22 +1,46 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+</head>
+
 <body>
 
 <div class = "container">
+    <h4 class="mb-3"> 글 작성 </h4>
     <form action="/contents/create" method="post">
-        <div class="form-writer">
-            <input type="text" id="writer" name="writer" row="1" cols="55" placeholder="이름을 입력하세요">
+
+        <div>
+            <label for="writer"></label>
+            <input type="text" id="writer" name="writer" class="form-control" placeholder="이름을 입력하세요">
         </div>
 
-        <div class="form=title">
-            <textarea name="title" id="title" style="resize:none;" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
+        <div>
+            <label for="title"></label>
+            <textarea name="title" id="title" style="resize:none;" class="form-control" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
         </div>
 
-        <div class="form-text">
-            <textarea name="text" id="text" style="resize:none;" rows="55" cols="55" placeholder="내용" maxlength="100" required></textarea>
+        <div>
+            <label for="text"></label>
+            <textarea name="text" id="text" style="resize:none;" class="form-control" rows="55" cols="55" placeholder="내용" maxlength="100" required></textarea>
         </div>
-        <button type="submit">등록</button>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="padding: 5px">
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary float-end"> 등록 </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary float-end" th:onclick="|location.href='@{/contents}'|"> 취소 </button>
+            </div>
+        </div>
+        </div>
     </form>
 </div>
 

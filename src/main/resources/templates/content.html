@@ -1,13 +1,30 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<h2>
-    <td th:text="${content.title}"></td>
-</h2>
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
 
 <body>
-    <tr>
-        <td th:text="${content.text}"></td>
-    </tr>
+<div class="container" style="max-width: 900px">
+    <button class="btn btn-primary float-start" th:onclick="|location.href='@{/contents}'|"> 목록 </button>
+
+    <div class="text-center">
+        <h3><td th:text="${content.title}"></td></h3>
+        <div class="text-end">
+            <td th:text="${content.writer}"></td>
+        </div>
+    </div>
+
+
+    <hr class="my-4">
+            <div>
+        <tr>
+            <td th:text="${content.text}"></td>
+        </tr>
+    </div>
+</div>
 </body>
+
+
 </html>

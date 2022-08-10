@@ -1,38 +1,49 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+
 <body>
 
-<div class="container">
+
+<div class="container" style="max-width: 700px">
+
+    <div class="py-5 text-center">
+        <h2>Contents Board</h2>
+    </div>
+
+    <hr class="my-4">
     <div>
-        <h1>Contents Board</h1>
-        <table border=1>
-            <div>
+        <table class="table">
 
                 <thead>
                 <tr>
-                    <th>#</th>
-                    <th>작성자</th>
-                    <th>제목</th>
-                    <th>작성일</th>
+                    <th>#</th> <th>작성자</th> <th>제목</th> <th>작성일</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr th:each="content : ${contents}">
-                    <a th:href="@{/contents/view(id=${content.id})}" th:text="${content.id}"></a>
-                    <a th:href="@{/contents/view(id=${content.id})}" th:text="${content.writer}"></a>
-                    <a th:href="@{/contents/view(id=${content.id})}" th:text="${content.title}"></a>
-                    <a th:href="@{/contents/view(id=${content.id})}" th:text="${content.date}"></a>
+                    <td><a th:href="@{/contents/view(id=${content.id})}" th:text="${content.id}"></a></td>
+                    <td><a th:href="@{/contents/view(id=${content.id})}" th:text="${content.writer}"></a></td>
+                    <td><a th:href="@{/contents/view(id=${content.id})}" th:text="${content.title}"></a></td>
+                    <td><a th:text="${content.date}"></a></td>
                 </tr>
                 </tbody>
 
-            </div>
         </table>
 
-        <p>
-            <a href="/contents/new-form">글 작성</a>
-        </p>
+
     </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end" th:onclick="|location.href='@{/contents/new-form}'|" >글 작성</button>
+        </div>
+    </div>
+
 </div>
 
 </body>
